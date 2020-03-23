@@ -1,0 +1,40 @@
+<div class="deep-page">
+    <mat-toolbar class="phone-title"><span>Phones</span></mat-toolbar>
+
+    <div class="g-row g-wrap">
+        <div class="g-xl-4 g-md-6 g-xs-12" *ngFor="let phone of currentPhones">
+            <mat-card class="phone-card">
+                <a [routerLink]="[ROUTES_SLASHED.PHONES, phone.id]">
+                <mat-card-header>
+                    <mat-card-title>{{phone.name}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image [src]="phone.imagePath" [alt]="phone.name"/>
+                <mat-card-subtitle>
+                    <p class="fadeout">
+                        {{phone.description}}
+                    </p>
+                </mat-card-subtitle>
+                </a>
+                <mat-card-content>
+                    <div class="item-price">
+                        <span>Price: {{phone.price}}$</span>
+                        <button mat-raised-button
+                                [routerLink]="[ROUTES_SLASHED.PHONES + ROUTES_SLASHED.PHONE_PAYMENT, phone.id]">
+                            Buy
+                        </button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+
+    <mat-paginator #paginator
+                   [hidden]="false"
+                   [pageSize]="paginationService.pageSize"
+                   [pageIndex]="paginationService.pageIndex"
+                   [length]="phones.length"
+                   [pageSizeOptions]="[3, 6, 9, 18, 36]"
+                   (page)="setPhonesAndPaginationValues($event)"
+    ></mat-paginator>
+
+</div>

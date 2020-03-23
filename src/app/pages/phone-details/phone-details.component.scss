@@ -1,0 +1,37 @@
+.phone-details-card {
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+
+    img {
+        width: 40%;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .mat-card-content {
+        margin: 20px;
+        font-size: 18px;
+
+        .mat-raised-button {
+            background-color: cornflowerblue;
+        }
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .phone-details-card {
+        display: block;
+
+        img {
+            width: calc(100% + 32px);
+            margin: 0 -16px 16px -16px;
+        }
+
+        .mat-card-content {
+            margin: 20px;
+        }
+    }
+}

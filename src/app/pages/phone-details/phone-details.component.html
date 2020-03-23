@@ -1,0 +1,15 @@
+<div class="deep-page" *ngIf="currentPhone">
+    <mat-toolbar class="phone-title">
+        <button [routerLink]="[ROUTES_SLASHED.PHONES]" mat-icon-button><i class="material-icons">arrow_back</i></button>
+        <span>{{currentPhone.name}}</span></mat-toolbar>
+
+    <mat-card class="phone-details-card">
+        <img mat-card-image [src]="currentPhone.imagePath" [alt]="currentPhone.name"/>
+        <mat-card-content>
+            {{currentPhone.description}}
+            <mat-card-actions align="end">
+                <button mat-raised-button [routerLink]="[ROUTES_SLASHED.PHONES + ROUTES_SLASHED.PHONE_PAYMENT, currentPhone.id]">Buy</button>
+            </mat-card-actions>
+        </mat-card-content>
+    </mat-card>
+</div>

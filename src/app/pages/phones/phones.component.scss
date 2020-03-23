@@ -1,0 +1,32 @@
+.mat-card {
+    justify-content: center;
+    align-items: center;
+
+    .mat-card-content {
+        padding-left: 0;
+
+        .mat-raised-button {
+            background-color: cornflowerblue;
+        }
+    }
+}
+
+.fadeout {
+    padding-top: 16px;
+    max-height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    content: "";
+    background: -webkit-linear-gradient(top, #000 70%, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.item-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
